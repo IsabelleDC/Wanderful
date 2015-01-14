@@ -1,0 +1,14 @@
+{%  extends 'base_template.html' %}
+
+{%  block content %}
+<h1>
+    Hi {{ user.username }}, these are your locations :
+</h1>
+    <ul>
+
+    {% for location in locations%}
+    <li><img width='100px'src="/static/img/{{location.image}}"><a href="{% url 'map' location.id %}">{{ location.name }}</a> {{ location.streetnum }}, {{ location.street }}, {{ location.city }}, {{ location.country }}</li></br>
+    {% endfor %}
+
+    </ul>
+{% endblock content %}

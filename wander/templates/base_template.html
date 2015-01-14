@@ -1,0 +1,50 @@
+{%  load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+<link rel="stylesheet" type ="text/css" href="{% static 'css/style.css' %}">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <title>
+        {%  block title %}
+Home
+        {% endblock title %}
+    </title>
+</head>
+
+
+
+<body>
+{# <style> body { background-image  : url(/static/img/map3.jpg) } </style>#}
+    <span style="float:right;">
+    {% if user.is_authenticated %}
+       <ul class="'nav nav-pills nav-justified">
+
+        <li><a href="{% url 'location_new' %}">Add a new favorite place</a></li>
+        <li> <a href="{% url 'categories' %}">See your favorite places</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+       <li><a href="{% url 'home' %}">Home</a></li>
+        </ul>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+
+    </span>
+{% block content %}
+{%  endblock content %}
+
+
+</body>
+<footer>
+   <p>Copyright Europe Team</p>
+</footer>
+</html>

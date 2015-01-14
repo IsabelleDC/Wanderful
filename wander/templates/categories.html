@@ -1,0 +1,13 @@
+{%  extends 'base_template.html' %}
+
+{%  block content %}
+<h1>
+    Hi {{ user.username }}, these are your categories :
+</h1>
+    <ul>
+    {% for category in categories%}
+    <li><a href="{% url 'locations' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+
+    </ul>
+{% endblock content %}

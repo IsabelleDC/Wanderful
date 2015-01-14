@@ -1,0 +1,14 @@
+{%  extends 'base_template.html' %}
+{% load staticfiles %}
+{%  block content %}
+<div class="jumbotron">
+  <h1>Welcome to Wanderful!!</h1>
+  <p>Enjoy and re-discover your world </p>
+
+<div>
+
+   <a href="{% url 'location_new' %}" class="btn btn-primary btn-lg" role="button">Add a new favorite place</a>
+{#    <div style="background-image: url(/static/img/map.jpg)"></div>#}
+</div>
+
+{% endblock content %}
